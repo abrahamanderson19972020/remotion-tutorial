@@ -1,0 +1,287 @@
+ALL PROMPTS · Make YouTube Videos with Claude Code + Remotion (Full Course)
+AI, Actually · in order, module by module
+
+HOW TO USE
+• Paste each prompt into the Claude desktop app (Code tab), in the order below.
+• Lines marked "Answer to Claude's question" are the choices I picked when Claude asked.
+• Times in brackets show where each module starts in the full course video.
+
+WHAT YOU NEED
+• Claude Pro plan or higher (Claude Code isn't on the free plan): https://claude.com/pricing
+• Claude desktop app: https://claude.com/download
+• Google Chrome: https://www.google.com/chrome/
+• Node.js, LTS version (free): https://nodejs.org
+• Remotion is free for individuals, non-profits and companies with up to three employees: https://www.remotion.dev/docs/license
+
+================================================================
+MODULE 0 · Welcome: what you will build  [0:00:00]
+================================================================
+No prompts in this module. It shows what you will build.
+
+================================================================
+MODULE 1 · What is Remotion?  [0:04:06]
+================================================================
+No prompts in this module. It explains the ideas. The prompts start in Module 2.
+
+================================================================
+MODULE 2 · Set up on Windows  [0:08:46]
+================================================================
+1. Check Node.js (PowerShell)
+node -v
+npm -v
+
+2. Connect the Remotion plugin catalog (Claude app › + › Plugins › Browse plugins › + › Add from a repository)
+remotion-dev/claude-code-plugin
+
+3. Backup: install the plugin from PowerShell
+claude plugin marketplace add remotion-dev/claude-code-plugin
+claude plugin install remotion@remotion
+
+4. Create your first project
+/remotion:remotion-create Create a new blank Remotion project called world-in-numbers in this folder. Use 1920x1080 and 30 fps. Copy CLAUDE.md into the new project folder, and copy brand-world-in-numbers.md into it as brand.md. Create the folder public/data and copy population-milestones.csv into it. Install everything, and tell me in plain English what you created.
+
+5. Open Remotion Studio
+Start Remotion Studio for the world-in-numbers project and give me the link to open in Chrome.
+
+================================================================
+MODULE 3 · Your first video: a channel intro  [0:16:33]
+================================================================
+1. The first prompt
+Make a 5-second intro animation called Intro for my YouTube channel "World in Numbers". A globe made of small dots slowly turns, while a big counter in the middle ticks up from 0 to 8,000,000,000. Then the counter fades, and the words "WORLD IN NUMBERS" appear. Dark background. 1920x1080, 30 fps.
+
+2. Change 1: slower globe, bigger counter
+Make the globe turn a little slower, and make the counter 20% bigger.
+
+3. Change 2: exact timing with a frame number
+The counter should reach 8,000,000,000 exactly at frame 90, and slow down at the end like a car braking.
+
+4. Change 3: a line under the title
+Add a thin line under the title that draws from left to right, starting at frame 110.
+
+5. Go back to a version you liked
+I liked the previous version better without the line. Go back to that version.
+
+6. Render your first MP4
+Render the Intro composition to out/intro.mp4.
+
+================================================================
+MODULE 4 · Brand your channel: rules, logo and banner  [0:24:03]
+================================================================
+1. Check that Claude learned the rules
+Read brand.md and CLAUDE.md. Summarize the rules you will follow in 5 short bullet points. Put the data rules first.
+
+2. Ask a follow-up
+Tell me the colors for this project.
+
+3. The profile picture (800x800 still)
+Load the fonts from brand.md with @remotion/google-fonts. Then make a still composition called ProfilePicture, 800x800: the logo from brand.md, centered, with a soft teal glow behind it. Keep everything inside a circle in the middle, because YouTube crops profile pictures to a circle. Render it as out/profilepicture.png.
+
+4. The banner with safe zones (2560x1440 still)
+Make a still composition called Banner, 2560x1440, for the YouTube channel banner. Put "WORLD IN NUMBERS", the tagline "The world, told with real data." and five topic chips (People, Money, Health, Energy, Countries) inside the center 1546x423 area, because that is all phones show. In the wider strip that computers show, add soft data art: a dotted world map on the left and a rising line chart on the right. Add a hidden option to show the safe-zone outlines, turn it on, then render out/banner-preview.png. Then turn it off and render out/banner.png.
+
+5. Remake the intro in the brand + compare
+Make a new version of the Intro called Intro-brand that follows brand.md exactly, with the logo from ProfilePicture. Keep the same timing. Then make a composition called Compare that shows the old Intro on the left and Intro-brand on the right, side by side.
+
+6. One small change (Claude makes a new version)
+Make the tagline slightly smaller.
+
+7. Render the new banner
+Render Banner-v2 to out/banner-v2.png.
+
+================================================================
+MODULE 5 · From script to scenes  [0:33:10]
+================================================================
+1. Script to storyboard (no code yet)
+Read script-8-billion.md and public/data/population-milestones.csv. Don't write code yet. Make a storyboard table with: scene number, the line, seconds, start frame, end frame, what we see, which data it uses, and how it moves. Turn the meaning into visuals: a timeline where each new billion arrives faster, and a field of dots where one dot is 10 million people. Don't just put the words on screen.
+
+2. Fill the data gaps with real sources
+Yes. Find the official UN sources for the 10.3 billion projection and for scene 9, add them as data files with SOURCES.md, and show me before building.
+
+3. Open Studio
+Start Remotion Studio for the world-in-numbers project and give me the link to open in Chrome.
+
+4. Build scenes 1 to 3 from shared parts
+Build scenes 1 to 3 from the storyboard as separate compositions (Scene01, Scene02, Scene03). Build the timeline and the dot field once, as reusable components that read the CSV, so every scene uses the same ones. Follow brand.md. Stop when they're ready so I can review.
+
+5. Review like a director (frame-number feedback)
+Scene03: at frame 50 the year "1804" is too small to read on a phone. Make it 1.5 times bigger, and let the first billion of dots fill in twice as fast.
+
+6. Build scenes 4 to 7
+Good. Now build scenes 4 to 7, same rules. On the timeline, show the gap in years between milestones (123, 33, 14, 13...) as shrinking brackets, and highlight the newest milestone in coral. Then stop.
+
+7. Build scenes 8 to 11
+Now build scenes 8 to 11. Scene 8: a big counter lands on "8 billion" with the date 15 Nov 2022. Scene 9: three simple icons for food, clean water and medicine. Scene 10: the line continues as a dashed "projection" and bends toward a peak of about 10.3 billion in the mid-2080s, labeled "UN projection". Scene 11 is the end card with the logo and "Subscribe". Add the source note on every data scene. Then stop.
+
+================================================================
+MODULE 6 · Voice, music and captions  [0:40:04]
+================================================================
+1. Make the voiceover with Kokoro (free, on your PC)
+Make the voiceover with Kokoro, the free open-source voice: install the kokoro-js package and use the voice Michael. Read the 11 lines of script-8-billion.md (only the sentences, not the timings or the facts note), with a short pause between lines. Save it as public/voiceover.mp3 and tell me how long it is.
+
+2. Sync every scene to its line
+Add public/voiceover.mp3 to the Episode, starting right after the intro. Find where each line of the script starts and ends in the audio, and change the scene lengths so each scene starts exactly with its own line. Show me a table of the new timings.
+
+3. Add music with ducking
+Add public/music.mp3 under the Episode at 15% volume. Fade it in over the first second and out over the last two seconds. Make the music quieter while the voice is speaking.
+
+4. Word-by-word captions (local transcript)
+Use the remotion-captions skill to add captions to the Episode. Transcribe public/voiceover.mp3 on this computer, then show 2 to 4 words at a time near the bottom, and highlight the word being spoken in coral. Keep the captions away from the charts and the source notes.
+
+5. Ask Claude for a new music track
+The audio musics in YouTube is not good. Generate a music.mp3 which will fit this video.
+
+6. Render the finished episode
+Render the Episode with voice, music and captions to out/8-billionepisode.mp4.
+
+================================================================
+MODULE 7 · Animated maps  [0:54:08]
+================================================================
+1. Draw the world map (Natural Earth)
+Install the world-atlas package (Natural Earth country shapes, public domain) and d3-geo. Make a composition called WorldMap, 8 seconds: draw all countries in a flat projection, dark, with thin borders, and let them fade in from west to east. Add "Map: Natural Earth" to public/data/SOURCES.md.
+
+2. Download real data and color the map (World Bank)
+Download the latest total population for every country from the World Bank API (indicator SP.POP.TOTL), skip regions and groups, and save it as public/data/population-latest.csv. Write the source, link, licence (CC BY 4.0) and today's date in SOURCES.md. Then make WorldMap_v2: each country fills with teal, darker for fewer people and brighter for more, one country at a time from west to east. Add a small legend and the source note "Source: World Bank (CC BY 4.0)".
+
+3. Fly the camera to India and China
+Make WorldMap_v3: after the map fills in, the camera slowly zooms to South Asia and East Asia. India and China light up in coral, one after the other, each with a label showing its population from the CSV, rounded to one decimal (for example "1.4 billion"). Hold for 2 seconds, then zoom back out.
+
+================================================================
+MODULE 8 · Graphics for talking-head videos  [1:05:41]
+================================================================
+1. A lower third with your name
+Create a new Remotion project called youtube-graphics, 1920x1080, 30 fps. Copy CLAUDE.md into it, and copy brand-ai-actually.md into it as brand.md. Then make a composition called LowerThird: my name "Abraham" and the line "Senior AI Engineer" slide in at the bottom left, stay for 4 seconds, and slide out. Transparent background.
+
+2. An animated tips list
+Make a composition called TipsList with a transparent background: the title "3 tips" and three items that appear one by one when I say them: "Be specific", "Use frame numbers", "Build 3 scenes at a time". Each item stays for 2 seconds before the next.
+
+3. A subscribe reminder
+Make a composition called Subscribe with a transparent background: a small card in the bottom right with a bell icon and the text "Subscribe for weekly AI tutorials". It pops in, the bell shakes once, and it leaves after 4 seconds.
+
+4. Export with a transparent background (ProRes 4444)
+Render LowerThird, TipsList and Subscribe as ProRes 4444 with transparency, so I can put them over my videos in DaVinci Resolve or Premiere. Save them in out/overlays.
+
+5. Put the graphics on your video (no editor needed)
+Make a composition called TalkingHead, 1920x1080, 30 fps, as long as public/me.mp4. Show public/me.mp4 full screen with its sound. On top of it, place LowerThird starting at 1 second, TipsList when I say "Here are 3 tips", and Subscribe 5 seconds before the end. Transcribe me.mp4 on this computer to find the exact moments. Then render TalkingHead to out/talking-head.mp4.
+
+6. Graphics on half the screen
+Make a version of TipsList called TipsList_Half that uses only the left 45% of the screen, so my face can stay visible on the right. Keep the same timing.
+
+================================================================
+MODULE 9 · One episode, every format  [1:17:22]
+================================================================
+1) A vertical Short
+Make a vertical Short called EpisodeShort, 1080x1920, under 60 seconds: use the timeline part (each billion arriving faster) and the 8 billion counter. Rearrange each scene for a phone screen, don't just crop it: the timeline runs from top to bottom instead of left to right. Keep important content inside the safe zone: nothing in the top 250 px or the bottom 400 px, where the app buttons sit. End with "Full video on the channel". Keep the voice, music and captions in sync.
+
+2) A square version
+Make a square version of the Short called EpisodeSquare, 1080x1080, using the same rules.
+
+3) A matching thumbnail
+Make a still composition called Thumbnail, 1280x720: the dot field on the right, with one bright coral dot. Big text on the left: "8 BILLION" in white and "in 200 years" in coral. Check that it is readable at 320 px wide. Render it as out/thumbnail.png.
+
+4) Render everything
+Render Episode, EpisodeShort and EpisodeSquare to the out folder, one after the other.
+
+   Answer to Claude's question:
+   Also render Episode-v6 to out/episodev6.mp4.
+
+================================================================
+MODULE 10 · The bar chart race  [1:27:42]
+================================================================
+1) Download 66 years of data
+Download total population (World Bank indicator SP.POP.TOTL) for every country, every year from 1960 to the latest year available, and save it as public/data/population-1960-latest.csv with the columns country, iso3, year, value. Skip regions and groups. Add the source, link, licence and date to SOURCES.md. Then tell me: how many countries, which years, and any gaps.
+
+2) Build the race
+Read population-1960-latest.csv and make a composition called BarChartRace, about 45 seconds: the 10 most populous countries for each year from 1960 to the latest year. Values change smoothly between years, and bars swap places smoothly when a country overtakes another. Show the country name and the value in billions or millions on each bar, a big year counter in gold at the bottom right, and the source note. Each country keeps the same color the whole time. Highlight India in coral.
+
+   Answer to Claude's question:
+   Render BarChartRace to out/bar-chart-race.mp4.
+
+3) Check the race against the data
+Check the BarChartRace against the CSV: for 1960, 1990 and the latest year, list the top 3 countries and their values from the file, and pause frames for those years so I can compare. Fix anything that doesn't match.
+
+   Answer to Claude's question:
+   Re-render BarChartRace to out/bar-chart-race.mp4.
+
+4) Reuse it for a new dataset
+Make BarChartRace_LifeExpectancy: the same race, but with life expectancy at birth (World Bank indicator SP.DYN.LE00.IN), countries with at least 1 million people, years 1960 to the latest. Download the data the same way, update SOURCES.md, and change the title, the unit (years) and the source note.
+
+   Answers to Claude's questions:
+   Israel's missing years: Fill with a straight line (Recommended)
+   Kuwait's jump: Keep it as in the file (Recommended)
+   Highlight: Japan (Recommended)
+   Render BarChartRace-LifeExpectancy to out/bar-chart-race-life-expectancy.mp4.
+
+================================================================
+MODULE 11 · A series style and your own skill  [1:42:45]
+================================================================
+1) Build the series parts
+Turn the repeated parts of the Episode into reusable components with props: Intro, ChapterTitle (number and title), NumberCard (a big number, a unit and a short sentence), SourceNote (source name and licence), RankingBars (the bar chart race as a component that takes any CSV) and EndScreen (logo, "Subscribe", and two spaces for suggested videos). Make a composition called SeriesParts that shows each one.
+
+   Then:
+   Start Remotion Studio for the world-in-numbers project and give me the link to open in Chrome.
+
+2) Edit the parts in Studio
+Use the remotion-interactivity skill so I can edit the props of NumberCard and ChapterTitle in the Studio sidebar.
+
+3) Your own /new-episode skill
+Create a Claude Code skill in .claude/skills/new-episode for this channel. Steps: ask me for the question; find a public dataset that answers it (World Bank, UN or another open source), download it into public/data and add it to SOURCES.md; tell me 3 surprising, true findings from the data; write a 60 to 90 second script in plain English where every number comes from the data; wait for my approval; make the storyboard; then build 3 scenes at a time using the series parts and brand.md. Never reuse an old story or old scenes for a new question. Keep the instructions short, then tell me how to use it.
+
+4) Run it (in a NEW session opened in the world-in-numbers folder)
+/new-episode How many people live in cities, and how fast is it changing?
+
+   Answer to Claude's question:
+   Yes, write it
+
+================================================================
+MODULE 12 · Final project: the channel trailer  [1:51:28]
+================================================================
+1) Script and storyboard
+Read script-win-trailer.md. Suggest 3 improvements to make the first 5 seconds more gripping, and keep it under 45 seconds. Then make the storyboard table. Use the series parts, the dot field, the map and the bar chart race where they fit, and check every number against public/data.
+
+2) Build the scenes
+Use the improved script. Build the trailer scenes 3 at a time, and stop after each group so I can review.
+
+3) Voice, music and captions
+Make the trailer voiceover with Kokoro and the voice af_heart, as in Module 6. Read the lines of script-win-trailer.md (only the sentences), with a short pause between lines. Save it as public/trailer-voice.mp3.
+
+   Answer to Claude's question: Improved v2 script (Recommended)
+
+Make a composition called Trailer from the trailer scenes. Add public/trailer-voice.mp3 and sync every scene to its line. Add public/trailer-music.mp3 at 15% with ducking under the voice, a fade in and a fade out. Add word-by-word captions with the current word in coral.
+
+   Answers to Claude's questions: Copy music.mp3 (Recommended) · Trailer with scenes 1-3 now
+
+4) Polish pass
+Review the whole Trailer like a professional motion designer and a data editor. List the 5 biggest problems: timing, readability on a phone, consistency, empty moments, and any number that doesn't match public/data or has no source note. Then fix them in new versions.
+
+Remove the effect between scene changes.
+
+5) Render
+Render the latest version of Trailer to out/trailer.mp4.
+
+6) Set it as the channel trailer (YouTube Studio)
+Upload trailer.mp4 (title: Welcome to World in Numbers).
+Customization > Home tab > Layout > ADD SECTION > Channel trailer > pick the video > Publish.
+
+================================================================
+MODULE 13 · Wrap-up: finish the channel  [2:01:45]
+================================================================
+1) Join the final videos
+We will make two videos using videos under /out folder with combining talking-head-v3 + episodev6 as the first video, the second video is talking-head-v3 + trailer.mp4.
+
+2) Upload to YouTube (YouTube Studio)
+Create > Upload videos > select talking-head-v3-episodev6.mp4
+Title: 8 Billion People: How Did We Get Here?
+Thumbnail: pick a frame, or upload out/thumbnail.png (Module 9)
+Audience: No, it's not made for kids · Paid promotion: No
+AI use (altered or synthetic content): Yes, if your host is AI-generated and looks real
+Tags · Comments on · Visibility: Public > Save
+
+THE 5 RULES TO REMEMBER
+1. Give Claude a brand file and a rules file before anything else.
+2. Real data first: every number comes from a file with a source.
+3. Storyboard first, then build 3 scenes at a time, with feedback by frame number.
+4. Sync scenes to the voiceover, and always add captions.
+5. Reuse your style, never your story: every episode needs a new question and new research.
+
+================================================================
+Made by Abraham · AI, Actually. Share your channel in the comments of the video!
