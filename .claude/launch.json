@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "world-innumbers",
+        "run",
+        "dev",
+        "--",
+        "--no-open"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "youtube-graphics-studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "youtube-graphics",
+        "run",
+        "dev",
+        "--",
+        "--no-open",
+        "--port=3001"
+      ],
+      "port": 3001
+    }
+  ]
+}
